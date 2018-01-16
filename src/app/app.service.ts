@@ -8,15 +8,17 @@ import { Product } from './product';
 @Injectable()
 export class AppService {
 
-  private productsUrl = '/api/products';
-
   constructor(
     private http: HttpClient
     
   ) { }
 
   getProducts (): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl);
+    return this.http.get<Product[]>('/api/products');
+  }
+
+  createProduct (newProduct: Product): Observable<Product> {
+    return this.http.post<Product>('/api/products', newProduct);
   }
 
 }

@@ -1,10 +1,10 @@
 <div class="container">
-  <form #heroForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #createProductForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" 
       required 
-      [(ngModel)]="newProduct.name" name="name"
+      [(ngModel)]="formInput.name" name="name"
       #name="ngModel">
       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
     </div>
@@ -12,7 +12,7 @@
       <label for="description">description</label>
       <input type="text" class="form-control" id="description" 
       required 
-      [(ngModel)]="newProduct.description" name="description"
+      [(ngModel)]="formInput.description" name="description"
       #description="ngModel">
       <div [hidden]="description.valid || description.pristine" class="alert alert-danger">description is required</div>
     </div>
@@ -20,10 +20,10 @@
       <label for="price">price</label>
       <input type="text" class="form-control" id="price" 
       required 
-      [(ngModel)]="newProduct.price" name="price"
+      [(ngModel)]="formInput.price" name="price"
       #price="ngModel">
       <div [hidden]="price.valid || price.pristine" class="alert alert-danger">price is required</div>
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success" [disabled]="!createProductForm.form.valid">Submit</button>
   </form>
 </div>
