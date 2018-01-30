@@ -1,0 +1,77 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #createPurchaseForm="ngForm">
+    <div class="form-group">
+        <label for="customerFirstName">First Name</label>
+        <input type="text" class="form-control" id="customerFirstName" 
+        required 
+        [(ngModel)]="formInput.customerFirstName" name="customerFirstName"
+        #customerFirstName="ngModel">
+        <div [hidden]="customerFirstName.valid || customerFirstName.pristine" class="alert alert-danger">First Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="customerLastName">Last Name</label>
+        <input type="text" class="form-control" id="customerLastName" 
+        required 
+        [(ngModel)]="formInput.customerLastName" name="customerLastName"
+        #customerLastName="ngModel">
+        <div [hidden]="customerLastName.valid || customerLastName.pristine" class="alert alert-danger">Last Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="productId">Product Id</label>
+        <input type="text" class="form-control" id="productId" 
+        required 
+        [(ngModel)]="formInput.productId" name="productId"
+        #productId="ngModel">
+        <div [hidden]="productId.valid || productId.pristine" class="alert alert-danger">Product ID is required</div>
+    </div>
+    <div class="form-group">
+        <label for="baseCost">Price</label>
+        <input type="text" class="form-control" id="baseCost" 
+        required 
+        [(ngModel)]="formInput.baseCost" name="baseCost"
+        #baseCost="ngModel">
+        <div [hidden]="baseCost.valid || baseCost.pristine" class="alert alert-danger">Price is required</div>
+    </div>
+    <div class="form-group">
+        <label for="salesTax">Sales Tax</label>
+        <input type="text" class="form-control" id="salesTax" 
+        required 
+        [(ngModel)]="formInput.salesTax" name="salesTax"
+        #salesTax="ngModel">
+        <div [hidden]="salesTax.valid || salesTax.pristine" class="alert alert-danger">Sales Tax is required</div>
+    </div>
+    <div class="form-group">
+        <label for="addressLn1">Address Line 1</label>
+        <input type="text" class="form-control" id="addressLn1" 
+        required 
+        [(ngModel)]="formInput.addressLn1" name="addressLn1"
+        #addressLn1="ngModel">
+        <div [hidden]="addressLn1.valid || addressLn1.pristine" class="alert alert-danger">Address Line 1 is required</div>
+    </div>
+    <div class="form-group">
+        <label for="addressLn2">Address Line 2</label>
+        <input type="text" class="form-control" id="addressLn2" 
+        required 
+        [(ngModel)]="formInput.addressLn2" name="addressLn2"
+        #addressLn2="ngModel">
+        <div [hidden]="addressLn2.valid || addressLn2.pristine" class="alert alert-danger">Address Line 2 is required</div>
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" 
+        required 
+        [(ngModel)]="formInput.state" name="state"
+        #state="ngModel">
+        <div [hidden]="state.valid || state.pristine" class="alert alert-danger">State is required</div>
+    </div>
+    <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <input type="text" class="form-control" id="zip" 
+        required 
+        [(ngModel)]="formInput.zip" name="zip"
+        #zip="ngModel">
+        <div [hidden]="zip.valid || zip.pristine" class="alert alert-danger">Zip Code is required</div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!createPurchaseForm.form.valid">Submit</button>
+  </form>
+</div>

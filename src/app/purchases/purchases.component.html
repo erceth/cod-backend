@@ -1,0 +1,35 @@
+<div>
+  <table>
+    <tr>
+      <th>customerFirstName</th>
+      <th>customerLastName</th>
+      <th>productId</th>
+      <th>baseCost</th>
+      <th>salesTax</th>
+      <th>addressLn1</th>
+      <th>addressLn2</th>
+      <th>state</th>
+      <th>zip</th>
+      
+    </tr>
+    <tr *ngFor="let purchase of purchases">
+      <td>{{purchase.customerFirstName}}</td>
+      <td>{{purchase.customerLastName}}</td>
+      <td>{{purchase.productId}}</td>
+      <td>{{purchase.baseCost}}</td>
+      <td>{{purchase.salesTax}}</td>
+      <td>{{purchase.addressLn1}}</td>
+      <td>{{purchase.addressLn2}}</td>
+      <td>{{purchase.state}}</td>
+      <td>{{purchase.zip}}</td>
+      
+    </tr>
+  </table>
+<button *ngIf="!showAddForm" (click)="revealAdd()">Manual Add</button>
+<div *ngIf="showAddForm">
+    <button (click)="hideAdd()">Cancel</button>
+    <create-purchase></create-purchase>
+</div>
+</div>
+
+
