@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -28,6 +29,10 @@ export class AppService {
 
   createPurchase (newPurchase): Observable<Purchase> {
     return this.http.post<Purchase>('/api/purchase', newPurchase);
+  }
+  
+  getOrders (limit) {
+    return this.http.get(`/api/orders?limit=${limit}`)
   }
 
 }

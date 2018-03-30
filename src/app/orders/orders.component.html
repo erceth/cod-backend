@@ -1,0 +1,33 @@
+<div class="orders">
+  <h3>Orders (limit 50)</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Amount</th>
+        <th>created</th>
+        <th>description</th>
+        <th>amount_refunded</th>
+        <th>name</th>
+        <th>address_line1</th>
+        <th>address_line2</th>
+        <th>address_city</th>
+        <th>address_state</th>
+        <th>address_zip</th>
+        
+      </tr>
+      <tr *ngFor="let order of orders">
+        <td>{{order.id}}</td>
+        <td>{{order.amount}}</td>
+        <td>{{order.created | convertUnixSecondsToDate: 'short'}}</td>
+        <td>{{order.description}}</td>
+        <td>{{order.amount_refunded}}</td>
+        <td>{{order.source.name}}</td>
+        <td>{{order.source.address_line1}}</td>
+        <td>{{order.source.address_line2}}</td>
+        <td>{{order.source.address_city}}</td>
+        <td>{{order.source.address_state}}</td>
+        <td>{{order.source.address_zip}}</td>
+      </tr>
+    </table>
+  </div>
+  
